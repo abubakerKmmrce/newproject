@@ -1,0 +1,28 @@
+
+<li><a href="{% url 'media-view' %}">media</a></li>
+
+{% load static %}
+<script src="https://rawgit.com/enyo/dropzone/master/dist/dropzone.js"></script>
+<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+
+    <title>Upload file</title>
+  </head>
+
+    <div class="container mt-3">
+        <h1>Upload file</h1>
+
+        <form action="upload" method="POST" class="dropzone">
+          {%csrf_token%}
+            <div class="fallback">
+              <input name="file" type="file" multiple />
+            </div>
+          </form><br>
+
+  <form action="/media">
+  <label for="fname">Title:</label><br>
+  <input type="text" id="fname" name="title" value=""><br>
+<!--  <label for="lname">Tag:</label><br>-->
+<!--  <input type="text" id="lname" name="tag" value=""><br><br>-->
+    <input type="submit" value="upload">
+        </form>
+ </div>
